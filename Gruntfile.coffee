@@ -197,7 +197,7 @@ module.exports = (grunt) ->
         base: "app"
         singleModule: true
       main:
-        src: ["app/partials/notifications/*.jade", "app/partials/settings/*.jade", "app/partials/*.jade", "app/templates/*.jade"],
+        src: ["app/partials/notifications/*.jade", "app/partials/settings/*.jade", "app/partials/*.jade", "app/templates/*.jade", "app/*.jade"],
         dest: 'build/js/templates.js'
     },
     "merge-json": # TODO: generate this list...
@@ -267,8 +267,8 @@ module.exports = (grunt) ->
 
     watch:
       jade:
-        files: ['app/partials/**/*.jade', 'app/templates/**/*.jade']
-        tasks: ['html2js']
+        files: ['app/partials/**/*.jade', 'app/templates/**/*.jade', 'app/*.jade']
+        tasks: ['build']
         options:
           spawn: false
 
