@@ -1,4 +1,4 @@
-describe "Verify Mobile Number Directive", ->
+describe "Hd Address Directive", ->
   $compile = undefined
   $rootScope = undefined
   element = undefined
@@ -13,23 +13,10 @@ describe "Verify Mobile Number Directive", ->
     $rootScope = _$rootScope_
     Wallet = $injector.get('Wallet')
 
-    Wallet.verifyMobile = (code, success, error) ->
-      if code
-        success()
-      else
-        error('error')
-
-    Wallet.changeMobile = (mobile, success, error) ->
-      if mobile
-        success()
-      else
-        error('error')
-
-    return
   )
 
   beforeEach ->
-    element = $compile("<tr button-lg full-width></tr>")($rootScope)
+    element = $compile("<verify-mobile-number button-lg full-width></verify-mobile-number>")($rootScope)
     $rootScope.$digest()
     isoScope = element.isolateScope()
     isoScope.$digest()
